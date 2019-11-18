@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 //using EastWestWalk.NetFrameWork.Common.Write;
-using Go.Job.Model;
+using FPLDQ.JobService.Model;
 using Go.Job.Web.Helper;
 using Newtonsoft.Json;
 
@@ -11,30 +11,6 @@ namespace Go.Job.Web.Logic
 {
     internal class JobLogic
     {
-
-        //TODO:暂时不用远程代理的方式.
-        //public static readonly IRemotableQuartzScheduler Scheduler;
-
-        //static JobHelper()
-        //{
-        //    if (Scheduler == null)
-        //    {
-        //        NameValueCollection properties = new NameValueCollection();
-        //        properties["quartz.scheduler.instanceName"] = "调度作业监控系统";
-        //        properties["quartz.scheduler.proxy"] = "true";
-        //        properties["quartz.scheduler.proxy.address"] = "tcp://127.0.0.1:555/QuartzScheduler";
-        //        RemotingSchedulerProxyFactory proxyFactory = new RemotingSchedulerProxyFactory
-        //        {
-        //            Address = "tcp://127.0.0.1:555/QuartzScheduler"
-        //        };
-        //        Scheduler = proxyFactory.GetProxy();
-        //        if (Scheduler.IsShutdown)
-        //        {
-        //            Scheduler.Start();
-        //        }
-        //    }
-        //}
-
         /// <summary>
         /// 启动
         /// </summary>
@@ -44,8 +20,8 @@ namespace Go.Job.Web.Logic
         {
             return Execute(() =>
             {
-                //string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/run";
-                string path = "http://localhost:25250/api/job/run";
+                string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/run";
+               
                 return JsonConvert.DeserializeObject<Result>(PostJosn(path, jobInfo));
             });
         }
@@ -60,8 +36,8 @@ namespace Go.Job.Web.Logic
         {
             return Execute(() =>
             {
-               // string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/pause";
-                string path = "http://localhost:25250/api/job/pause";
+                string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/pause";
+              
                 return JsonConvert.DeserializeObject<Result>(PostJosn(path, jobInfo));
             });
         }
@@ -75,9 +51,7 @@ namespace Go.Job.Web.Logic
         {
             return Execute(() =>
             {
-
-                //string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/resume";
-                string path = "http://localhost:25250/api/job/resume";
+                string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/resume";
                 return JsonConvert.DeserializeObject<Result>(PostJosn(path, jobInfo));
             });
         }
@@ -93,8 +67,7 @@ namespace Go.Job.Web.Logic
         {
             return Execute(() =>
             {
-                //string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/remove";
-                string path = "http://localhost:25250/api/job/remove";
+                string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/remove";
                 return JsonConvert.DeserializeObject<Result>(PostJosn(path, jobInfo));
             });
         }

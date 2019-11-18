@@ -1,5 +1,5 @@
 ﻿using System;
-using Go.Job.BaseJob;
+using FPLDQ.JobService.BaseJob;
 
 namespace TestJob2
 {

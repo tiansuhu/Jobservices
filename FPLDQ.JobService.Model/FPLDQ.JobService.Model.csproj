@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{54C2978E-63CA-495C-BFB2-50F6EBF209E3}</ProjectGuid>
+    <ProjectGuid>{D47524C9-3F63-40C6-B368-72E3E8D0332D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestJob2</RootNamespace>
-    <AssemblyName>TestJob2</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>FPLDQ.JobService.Model</RootNamespace>
+    <AssemblyName>FPLDQ.JobService.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -41,14 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Job2.cs" />
+    <Compile Include="JobInfo.cs" />
+    <Compile Include="JobPager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FPLDQ.JobService.BaseJob\FPLDQ.JobService.BaseJob.csproj">
-      <Project>{E587A17A-A8F3-45D9-8274-57655C7881D5}</Project>
-      <Name>FPLDQ.JobService.BaseJob</Name>
-    </ProjectReference>
+    <Compile Include="Result.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

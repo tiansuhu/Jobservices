@@ -209,9 +209,9 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Go.Job.Model\Go.Job.Model.csproj">
-      <Project>{d47524c9-3f63-40c6-b368-72e3e8d0332d}</Project>
-      <Name>Go.Job.Model</Name>
+    <ProjectReference Include="..\FPLDQ.JobService.Model\FPLDQ.JobService.Model.csproj">
+      <Project>{D47524C9-3F63-40C6-B368-72E3E8D0332D}</Project>
+      <Name>FPLDQ.JobService.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

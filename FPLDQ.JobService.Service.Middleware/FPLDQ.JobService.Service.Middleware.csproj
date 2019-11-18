@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{54C2978E-63CA-495C-BFB2-50F6EBF209E3}</ProjectGuid>
+    <ProjectGuid>{438EA8CE-DB50-4012-99D9-779D44C2CDE2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestJob2</RootNamespace>
-    <AssemblyName>TestJob2</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>FPLDQ.JobService.Service.Middleware</RootNamespace>
+    <AssemblyName>FPLDQ.JobService.Service.Middleware</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EastWestWalk.NetFrameWork.Common, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EastWestWalk.NetFrameWork.Common.1.0.0.6\lib\net45\EastWestWalk.NetFrameWork.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="EastWestWalk.NetFrameWork.Enum, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EastWestWalk.NetFrameWork.Enum.1.0.0.3\lib\net45\EastWestWalk.NetFrameWork.Enum.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,14 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Job2.cs" />
+    <Compile Include="Log\DefaultLogWriter.cs" />
+    <Compile Include="Log\ILogWriter.cs" />
+    <Compile Include="MidContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Log\TestLogWriter.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\FPLDQ.JobService.BaseJob\FPLDQ.JobService.BaseJob.csproj">
-      <Project>{E587A17A-A8F3-45D9-8274-57655C7881D5}</Project>
-      <Name>FPLDQ.JobService.BaseJob</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

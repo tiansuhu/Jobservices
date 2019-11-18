@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 //using EastWestWalk.NetFrameWork.Common.Write;
-using Go.Job.Model;
 using SqlSugar;
+using FPLDQ.JobService.Model;
 
 namespace Go.Job.Web
 {

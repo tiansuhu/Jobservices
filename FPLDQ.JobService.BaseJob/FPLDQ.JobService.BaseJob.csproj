@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{54C2978E-63CA-495C-BFB2-50F6EBF209E3}</ProjectGuid>
+    <ProjectGuid>{E587A17A-A8F3-45D9-8274-57655C7881D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestJob2</RootNamespace>
-    <AssemblyName>TestJob2</AssemblyName>
+    <RootNamespace>FPLDQ.JobService.BaseJob</RootNamespace>
+    <AssemblyName>FPLDQ.JobService.BaseJob</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,14 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Job2.cs" />
+    <Compile Include="BaseJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FPLDQ.JobService.BaseJob\FPLDQ.JobService.BaseJob.csproj">
-      <Project>{E587A17A-A8F3-45D9-8274-57655C7881D5}</Project>
-      <Name>FPLDQ.JobService.BaseJob</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
