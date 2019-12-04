@@ -79,6 +79,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FPLDQ.JobService.Log\FPLDQ.JobService.Log.csproj">
+      <Project>{92337256-BBB3-4F5F-8A8D-6280C44BFFB0}</Project>
+      <Name>FPLDQ.JobService.Log</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FPLDQ.JobService.Model\FPLDQ.JobService.Model.csproj">
       <Project>{D47524C9-3F63-40C6-B368-72E3E8D0332D}</Project>
       <Name>FPLDQ.JobService.Model</Name>

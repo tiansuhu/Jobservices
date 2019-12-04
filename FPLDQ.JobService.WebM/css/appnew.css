@@ -1,0 +1,26 @@
+﻿.modal-backdrop.fade.in {
+    opacity: 0.5;
+}
+
+.modal.fade.in {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    opacity: 1;
+}
+
+/*页面切换的时候出现显示上衣页面的问题*/
+[ui-view].ng-leave {
+    display: none;
+}
+
+    [ui-view].ng-leave.smooth {
+        display: block;
+    }
+
+
+
+
+.margin-right-1rem {
+margin-right:1rem;
+}
+

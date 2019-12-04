@@ -1,0 +1,28 @@
+﻿<form name="form">
+    <div class="modal-header">
+        <button type="button" class="close" ng-show="Button_Close"
+                data-dismiss="modal" aria-hidden="true" ng-click="cancel()">
+            &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+            <span ng-bind="Title"></span>
+        </h4>
+    </div>
+    <div class="modal-body">
+        <span ng-bind="Message"></span>
+        <div ng-if="importExcel">
+            <span>请选择文件</span>
+            <input ng-model="filepath" type="file" id="file" />
+            <div style="height:20px;"> </div>
+            <label style="cursor: pointer;color:cornflowerblue;" ng-click="ExportExcelFromform()">下载模板</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn" ng-click="cancel()" ng-show="Button_Cancel" style="background-color: gainsboro;">
+            <span ng-bind="Button_Cancel_Text"></span>
+        </button>
+        <button type="button" class="btn btn-info" ng-click="ok()" ng-show="Button_OK">
+            <span ng-bind="Button_OK_Text"></span>
+        </button>
+    </div>
+</form>

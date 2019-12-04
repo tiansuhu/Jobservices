@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
+using FPLDQ.JobService.Log;
 using FPLDQ.JobService.Model;
 using Quartz;
 
@@ -310,8 +311,11 @@ namespace FPLDQ.JobService.Service.Logic
                     JobPool.TryRemove(jobInfo.Id, out  jobRuntimeInfo);
                     AppDomainLoader.UnLoad(jobRuntimeInfo.AppDomain);
                 }
-                return true;
                 //TODO:记录日志
+                LogWrite.CreateLog().WritLog("将作业移除作业池");
+                return true;
+                
+               
             }
         }
 

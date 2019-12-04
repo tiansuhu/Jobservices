@@ -20,8 +20,8 @@ namespace Go.Job.Web
                 ConnectionString = connStr,
                 DbType = DbType.SqlServer,
                 IsAutoCloseConnection = true,
-                //InitKeyType = InitKeyType.Attribute //从实体特性中读取主键自增列信息
-                InitKeyType = InitKeyType.Attribute
+                //InitKeyType = InitKeyType.Attribute 
+               InitKeyType = InitKeyType.Attribute//从实体特性中读取主键自增列信息
             };
         }
 
@@ -92,6 +92,7 @@ namespace Go.Job.Web
                 jobInfo.StartTime = DateTime.Now;
                 using (SqlSugarClient db = new SqlSugarClient(Config))
                 {
+                   
                     res =  db.Insertable(jobInfo).ExecuteCommand();
                 }
             }
@@ -158,6 +159,9 @@ namespace Go.Job.Web
             }
             return res;
         }
+        
+
+    
     }
 }
 

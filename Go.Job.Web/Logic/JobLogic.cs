@@ -20,8 +20,11 @@ namespace Go.Job.Web.Logic
         {
             return Execute(() =>
             {
-                string path = ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/run";
-               
+                jobInfo.CreateTime = System.DateTime.Now;
+                jobInfo.StartTime = System.DateTime.Now;
+                string path = "http://localhost:25250/api/job/run";
+                //ApiAddressCache.GetApiAddress(jobInfo.SchedName) + "/api/job/run";
+
                 return JsonConvert.DeserializeObject<Result>(PostJosn(path, jobInfo));
             });
         }

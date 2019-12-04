@@ -1,4 +1,5 @@
-﻿using FPLDQ.JobService.Model;
+﻿using FPLDQ.JobService.Log;
+using FPLDQ.JobService.Model;
 using FPLDQ.JobService.Service.Logic;
 using FPLDQ.JobService.Service.Middleware;
 using System;
@@ -24,6 +25,7 @@ namespace FPLDQ.JobService.Service.Api
         [HttpPost]
         public Result Run(JobInfo jobInfo)
         {
+            LogWrite.CreateLog().WritLog("启动作业：" + $"id:{jobInfo.Id},{jobInfo.SchedName}.{jobInfo.JobName}");
             return Execute(() => SchedulerManager.Singleton.CreateJob(jobInfo));
         }
 

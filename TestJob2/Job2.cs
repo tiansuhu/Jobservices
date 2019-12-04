@@ -1,5 +1,6 @@
 ﻿using System;
 using FPLDQ.JobService.BaseJob;
+using FPLDQ.JobService.Log;
 
 namespace TestJob2
 {
@@ -7,7 +8,7 @@ namespace TestJob2
     {
         protected override void Execute()      
         {
-            Console.WriteLine($"{DateTime.Now} :Job2 ");
+            LogWrite.CreateLog().DuggerLog("这个是测试TestJob2");
         }
     }
 }

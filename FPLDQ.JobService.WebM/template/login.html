@@ -1,0 +1,34 @@
+﻿<div class="container  w-auto-xs page-signup">
+    <div class="signup-container">
+        <div class="signup-header">
+            <img src="images/LOGO_W1.png" style="width:80%;">
+        </div>
+        <form name="form">
+            <div class="signup-form">
+                <div class="" style="text-align:center">
+                    <div class="signup-text">
+                        <span>XXXXXX公司管理系统</span>
+                    </div>
+
+                    <div class="form-code ivu-input-wrapper ivu-input-wrapper-default ivu-input-type">
+                     <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i> 
+                    <input id="txtUser" ng-model="userCode"  type="text"placeholder="{{LanJson.Code}}" class="ivu-input ivu-input-default ivu-input-with-prefix"> 
+                    <span class="ivu-input-prefix"><i class="ivu-icon ivu-icon-ios-contact"></i></span>
+                    </div>
+
+                    <div class="form-password ivu-input-wrapper ivu-input-wrapper-default ivu-input-type">
+                        <i class="ivu-icon ivu-icon-ios-loading ivu-load-loop ivu-input-icon ivu-input-icon-validate"></i>
+                        <input id="txtPassword" ng-model="userPassword" type="password" placeholder="请输入密码" class="ivu-input ivu-input-default ivu-input-with-prefix">
+                        <span class="ivu-input-prefix"><i class="ivu-icon ivu-icon-ios-lock"></i></span>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button class="ivu-btn ivu-btn-success" style="width:100%;" ng-click="loginIn()">
+                            <span>登录</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
