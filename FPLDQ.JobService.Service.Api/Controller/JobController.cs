@@ -25,7 +25,7 @@ namespace FPLDQ.JobService.Service.Api
         [HttpPost]
         public Result Run(JobInfo jobInfo)
         {
-            LogWrite.CreateLog().WritLog("启动作业：" + $"id:{jobInfo.Id},{jobInfo.SchedName}.{jobInfo.JobName}");
+            LogWrite.CreateLog().WritLog("启动作业：" + $"id:{jobInfo.Id},{jobInfo.SchedName}:{jobInfo.JobGroup}.{jobInfo.JobName}");
             return Execute(() => SchedulerManager.Singleton.CreateJob(jobInfo));
         }
 

@@ -26,8 +26,8 @@ angular.module('app')
     ['$stateProvider', '$urlRouterProvider',
       function ($stateProvider, $urlRouterProvider) {
           // 默认页面
-          //$urlRouterProvider.otherwise('/platform/login');
-          $urlRouterProvider.otherwise('/app/home/homepage');
+          $urlRouterProvider.otherwise('/platform/login');
+          //$urlRouterProvider.otherwise('/app/home/homepage');
           
           $stateProvider
               // 平台页面基类
@@ -45,7 +45,6 @@ angular.module('app')
                       deps: ['$ocLazyLoad',
                         function ($ocLazyLoad) {
                             return $ocLazyLoad.load([
-                                'css/appExtend.css',
                                 'js/controllers/LoginController.js',
                                 'js/directives/app-directive.js?v=201802231',
                             ]);

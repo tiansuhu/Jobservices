@@ -52,19 +52,20 @@
                 <td>{{job.PREV_FIRE_TIME}}</td>
                 <td>{{job.NEXT_FIRE_TIME}}</td>
                 <td>
-                    <a href="javascript:void(0)" style="color:green" ng-if="!job.TRIGGER_STATE" ng-click="RunJob({{job}})">启动</a>
+                   
+                    <a  href="javascript:void(0)" style="color:green" ng-if="!job.TRIGGER_STATE" ng-click="RunJob({{job}})">启动</a>
                     <a href="javascript:void(0)" style="color:coral" ng-if="!job.TRIGGER_STATE" ng-click="EditJobInfo({{job}})">编辑</a>
                     <a href="javascript:void(0)" style="color:red" ng-if="!job.TRIGGER_STATE" ng-click="DeleteJobInfo({{job.Id}})">删除</a>
-                   
+
                     <div ng-if="job.TRIGGER_STATE=='PAUSED'">
-                        <a href="javascript:void(0)" style="color:darkseagreen"  ng-click="ResumeJob({{job}})">恢复</a>
+                        <a href="javascript:void(0)" style="color:darkseagreen" ng-click="ResumeJob({{job}})">恢复</a>
                         <a href="javascript:void(0)" style="color:red" ng-click="RemoveJob({{job}})">停止</a>
                     </div>
                     <div ng-if="job.TRIGGER_STATE=='ACQUIRED'||job.TRIGGER_STATE=='WAITING'">
                         <a href="javascript:void(0)" style="color:orange" ng-click="PauseJobInfo({{job}})">暂停</a>
                     </div>
-                    
-                    
+
+
                 </td>
             </tr>
         </table>

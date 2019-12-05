@@ -28,7 +28,28 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
      with font-awesome or any other icon font library -->
-                <li class="nav-header">任务调度系统</li>
+                <!--有叶子节点-->
+                <li  class="nav-item has-treeview menu-open"  ng-repeat="menu in menuData" ng-if="menu.HasChildMenu">
+                    <a href="javascript:void(0)" class="nav-link" ng-click="menuopen($event)">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            {{menu.DisplayName}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" ng-if="menu.HasChildMenu">
+                        <li class="nav-item" ng-repeat="child in menu.ChildMenuData">
+                            <a href="javascript:void(0)" class="nav-link" ng-click="{{child.GoMenu}}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>{{child.DisplayName}}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <!--<li class="nav-header">任务调度系统</li>
                 <li class="nav-item has-treeview menu-open" >
                     <a href="javascript:void(0)" class="nav-link" ng-click="menuopen($event)">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -57,7 +78,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
 
 
                 <!--<li class="nav-item">
